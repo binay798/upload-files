@@ -17,3 +17,8 @@ def index(request):
         form = PostForm()
         context = {'form':form}
         return render(request,'main.html',context)
+
+def files(request):
+    posts = Posts.objects.all()
+    context = {'posts':posts}
+    return render(request,'photo.html',context)
